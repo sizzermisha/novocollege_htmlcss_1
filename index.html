@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vayman Prod.</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    
+    <main>
+        <p>Watch 1</p>
+
+        <div class="hide" id="add-container">
+            <input type="text" id="search-input" placeholder="Search Input">
+            <ol id="todo-container"></ol>
+        </div>
+        
+        <div class="action-container">
+            <div class="radio-input">
+                <label class="play-blue-radio">
+                    <input id="select-search" type="radio">
+                    <span class="search">Search</span>
+                </label>
+                <br>
+                <label class="play-blue-radio">
+                    <input id="select-add" type="radio">
+                    <span class="name">Input Name</span>
+                </label>
+            </div>
+        </div>
+        <div class="action-list-container" id="add-container">
+            <input type="text" id="add-post-input" placeholder="Введите текст">
+            <button id="add-post-button">Add Post</button>
+        </div>
+    </main>
+    <script src="/js/index.js"></script>
 </body>
 </html>
