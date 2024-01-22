@@ -4,7 +4,6 @@ const toDoList = document.querySelectorAll('#todo-container', "li");
 searchInput.oninput = () => {
     let searchArr = [];
     todoObject.map(data => {
-        console.log(searchInput.value)
         if(data.text.includes(searchInput.value)) {
             searchArr.push(data);
         }

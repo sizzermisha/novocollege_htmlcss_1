@@ -50,10 +50,6 @@ AddPostButton.onclick = () => {
 const
     DeletePostButton = document.getElementById('delete-button');
 
-// DeletePostButton.onclick = () => {
-//     DeletePostButton.removeChild();
-// }
-
 document.addEventListener('click', function(e) {
     if(e.target.className == "delete-button") {
         const idToDelete = e.target.id;
