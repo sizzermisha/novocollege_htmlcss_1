@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    padding: 3vw;
+    width: 65%;
+    height: 65%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+    border-radius: 1vw;
+    border: 0.2vw solid #ffffff;
+}
+
+h1 {
+    font-size: 2vw;
+    letter-spacing: 0;   
+}
+
+.add-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.action-container {
+    width: 100%;
+}
+#add-post-input:first-child {
+    width: 80%;
+}
+.search-input {
+    width: 100%;
+}
+#add-post-button {
+    width: 15%;
+    padding: 0.5 1.5vw;
+    background-color: white;
+    color: black;
+    border-radius: 0.5vw;
+}
+
+#add-post-button:hover {
+    color: white;
+    background-color: black;
+}
+
+.todo-container {
+    width: 100%;
+    max-height: 60vh;
+    
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: auto;
+}
