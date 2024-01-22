@@ -20,13 +20,14 @@ const LocalCheckStorage = () => {
         `;
     } else {
         TodoContainer.innerHTML = ``;
-        console.log(todoObject);
         todoObject.map((data, i) => { 
             TodoContainer.innerHTML += `<li id="${data.id}">
                 <p>${i + 1}</p>
-                <p>${data.text}</p>
-                ${data.status = 'done' ? "" : `<button id="done-button">Del</button>`}
-                <button id="delete-button">Delete Button</button>
+                <p ${data.status == 'done' ? "style=\"color: green\"" : ""}>${data.text}
+                ${data.status == 'done' ? "" : 
+                    `<button class="done-button" id="${data.id}">DONE</button>
+                `}
+                <button class="delete-button" id="${data.id}">Delete Button</button>
             </li>`
         })
     }
@@ -52,3 +53,38 @@ const
 // DeletePostButton.onclick = () => {
 //     DeletePostButton.removeChild();
 // }
+
+document.addEventListener('click', function(e) {
+    if(e.target.className == "delete-button") {
+        const idToDelete = e.target.id;
+        let deleteArr = [];
+
+        todoObject.map(data => {
+            if(data.id != idToDelete) {
+                deleteArr.push(data);
+            }
+        })
+
+        todoObject = deleteArr;
+        localStorage.setItem('todo', JSON.stringify(todoObject));
+        LocalCheckStorage();
+    }
+
+    if(e.target.className == "done-button") {
+        const idToDone = e.target.id;
+
+        let doneArr = [];
+        todoObject.map(data => {
+            if(data.id == idToDone) {
+                data.status = "done";
+            }
+            doneArr.push(data);
+        })
+
+        todoObject = doneArr;
+        localStorage.setItem('todo', JSON.stringify(todoObject));
+        LocalCheckStorage();
+    }
+
+
+})
